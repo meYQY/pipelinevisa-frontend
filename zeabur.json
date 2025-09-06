@@ -1,0 +1,16 @@
+{
+  "name": "pipelinevisa-frontend",
+  "build": {
+    "type": "docker",
+    "dockerfile": "Dockerfile"
+  },
+  "env": {
+    "PORT": "3000",
+    "NODE_ENV": "production"
+  },
+  "healthcheck": {
+    "path": "/health",
+    "port": 3000,
+    "interval": 30
+  }
+}

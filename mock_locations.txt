@@ -1,0 +1,75 @@
+src//app/consultant/cases/[id]/translation/page.tsx:122:// 模拟数据
+src//app/consultant/cases/[id]/translation/page.tsx:123:const mockData = {
+src//app/consultant/cases/[id]/translation/page.tsx:294:    const englishData = mockData.english[sectionId as keyof typeof mockData.english]
+src//app/consultant/cases/[id]/translation/page.tsx:314:      // 更新mockData（实际应该调用API）
+src//app/consultant/cases/[id]/translation/page.tsx:315:      ;(mockData.english[sectionId as keyof typeof mockData.english] as any)[fieldKey] = newValue
+src//app/consultant/cases/[id]/translation/page.tsx:350:      const englishData = mockData.english[section.id as keyof typeof mockData.english]
+src//app/consultant/cases/[id]/translation/page.tsx:468:              const chineseData = mockData.chinese[activeSection as keyof typeof mockData.chinese]
+src//app/consultant/cases/[id]/translation/page.tsx:503:              const englishData = mockData.english[activeSection as keyof typeof mockData.english]
+src//app/consultant/cases/[id]/diagnosis/page.tsx:35:// 模拟诊断数据
+src//app/consultant/cases/[id]/diagnosis/page.tsx:36:const mockDiagnosisItems: DiagnosisItem[] = [
+src//app/consultant/cases/[id]/diagnosis/page.tsx:91:  const [diagnosisItems, setDiagnosisItems] = useState<DiagnosisItem[]>(mockDiagnosisItems)
+src//app/consultant/cases/[id]/diagnosis/page.tsx:106:  // 模拟AI诊断过程
+src//app/consultant/cases/[id]/diagnosis/page.tsx:137:    // 模拟AI回复
+src//app/consultant/cases/[id]/diagnosis/page.tsx:150:  // 生成AI回复（模拟）
+src//app/(auth)/login/page.tsx:42:    // 模拟登录功能（当后端不可用时）
+src//app/(auth)/login/page.tsx:44:      // 模拟用户数据
+src//app/(auth)/login/page.tsx:45:      const mockUser = {
+src//app/(auth)/login/page.tsx:54:      localStorage.setItem('access_token', 'mock-token')
+src//app/(auth)/login/page.tsx:55:      localStorage.setItem('refresh_token', 'mock-refresh-token')
+src//app/(auth)/login/page.tsx:56:      localStorage.setItem('user', JSON.stringify(mockUser))
+src//app/(auth)/login/page.tsx:58:      toast.success('登录成功（模拟模式）')
+src//app/(consultant)/clients/page.tsx:30:// 模拟数据
+src//app/(consultant)/clients/page.tsx:31:const mockClients: Client[] = [
+src//app/(consultant)/clients/page.tsx:88:  const [clients, setClients] = useState<Client[]>(mockClients)
+src//app/(consultant)/settings/page.tsx:35:// 模拟组织信息
+src//app/(consultant)/settings/page.tsx:36:const mockOrgInfo = {
+src//app/(consultant)/settings/page.tsx:43:// 模拟套餐信息
+src//app/(consultant)/settings/page.tsx:44:const mockPlanInfo: PlanInfo = {
+src//app/(consultant)/settings/page.tsx:55:// 模拟团队成员
+src//app/(consultant)/settings/page.tsx:56:const mockMembers: TeamMember[] = [
+src//app/(consultant)/settings/page.tsx:105:  const [members, setMembers] = useState<TeamMember[]>(mockMembers)
+src//app/(consultant)/settings/page.tsx:201:                <p className="text-base text-gray-900">{mockOrgInfo.name}</p>
+src//app/(consultant)/settings/page.tsx:205:                <p className="text-base text-gray-900">{mockOrgInfo.code}</p>
+src//app/(consultant)/settings/page.tsx:209:                <p className="text-base text-gray-900">{mockOrgInfo.createdAt}</p>
+src//app/(consultant)/settings/page.tsx:213:                <p className="text-base text-gray-900">{mockOrgInfo.admin}</p>
+src//app/(consultant)/settings/page.tsx:310:                  <h3 className="text-lg font-medium text-gray-900">{mockPlanInfo.name}</h3>
+src//app/(consultant)/settings/page.tsx:311:                  <p className="text-sm text-gray-500">有效期至 {mockPlanInfo.expiryDate}</p>
+src//app/(consultant)/settings/page.tsx:320:                  used={mockPlanInfo.usedCases} 
+src//app/(consultant)/settings/page.tsx:321:                  total={mockPlanInfo.caseLimit} 
+src//app/(consultant)/settings/page.tsx:325:                  used={mockPlanInfo.usedMembers} 
+src//app/(consultant)/settings/page.tsx:326:                  total={mockPlanInfo.memberLimit} 
+src//app/(consultant)/settings/page.tsx:331:                  used={mockPlanInfo.usedStorage} 
+src//app/(consultant)/settings/page.tsx:332:                  total={mockPlanInfo.storageLimit} 
+src//app/(consultant)/cases/[id]/page.tsx:96:      // 使用模拟数据
+src//app/(consultant)/dashboard/page.tsx:93:      // 使用模拟数据
+src//app/(consultant)/links/page.tsx:13:// 模拟数据
+src//app/(consultant)/links/page.tsx:14:const mockLinks = [
+src//app/(consultant)/links/page.tsx:66:  const [links, setLinks] = useState(mockLinks)
+src//app/(consultant)/notifications/page.tsx:42:// 模拟通知数据
+src//app/(consultant)/notifications/page.tsx:43:const mockNotifications: Notification[] = [
+src//app/(consultant)/notifications/page.tsx:140:  const [notifications, setNotifications] = useState<Notification[]>(mockNotifications)
+src//app/(consultant)/analytics/page.tsx:51:// 模拟数据
+src//app/(consultant)/analytics/page.tsx:52:const mockData: AnalyticsData = {
+src//app/(consultant)/analytics/page.tsx:103:  const [data] = useState<AnalyticsData>(mockData)
+src//app/(client)/fill/[token]/upload/page.tsx:127:    // 模拟上传过程
+src//app/(client)/fill/[token]/upload/page.tsx:131:      // 模拟进度更新
+src//app/(client)/fill/[token]/upload/page.tsx:205:          // 开发环境模拟
+src//app/(client)/supplement/[token]/page.tsx:38:// 模拟补充材料数据
+src//app/(client)/supplement/[token]/page.tsx:39:const mockSupplementItems: SupplementItem[] = [
+src//app/(client)/supplement/[token]/page.tsx:68:  const [items, setItems] = useState<SupplementItem[]>(mockSupplementItems)
+src//app/(client)/supplement/[token]/page.tsx:95:    // 模拟上传过程
+src//app/(client)/supplement/[token]/page.tsx:100:        // 模拟进度
+src//app/(client)/supplement/[token]/page.tsx:116:        // 模拟上传完成
+src//components/consultant/CreateCaseModal.tsx:60:      // 模拟创建案例（当后端不可用时）
+src//components/consultant/CreateCaseModal.tsx:62:      const mockCase = {
+src//components/consultant/CreateCaseModal.tsx:72:      const link = `https://pipelinevisa.com/apply/${mockCase.id}`
+src//components/consultant/CreateCaseModal.tsx:74:      // 保存到localStorage模拟持久化
+src//components/consultant/CreateCaseModal.tsx:75:      const cases = JSON.parse(localStorage.getItem('mock_cases') || '[]')
+src//components/consultant/CreateCaseModal.tsx:76:      cases.unshift(mockCase)
+src//components/consultant/CreateCaseModal.tsx:77:      localStorage.setItem('mock_cases', JSON.stringify(cases))
+src//services/link.service.ts:40:      // 开发环境模拟
+src//services/client.service.ts:61:      // 模拟数据用于开发
+src//services/client.service.ts:65:          case_id: 'mock-case-id',
+src//services/client.service.ts:84:      // 模拟数据
+src//services/client.service.ts:152:      // 模拟响应
