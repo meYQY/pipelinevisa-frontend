@@ -44,7 +44,19 @@ const nextConfig = {
   },
   
   // Webpack配置
-  webpack: (config) => {
+  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    // 配置路径别名
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': require('path').resolve(__dirname, './src'),
+      '@/lib': require('path').resolve(__dirname, './src/lib'),
+      '@/services': require('path').resolve(__dirname, './src/services'),
+      '@/components': require('path').resolve(__dirname, './src/components'),
+      '@/types': require('path').resolve(__dirname, './src/types'),
+      '@/stores': require('path').resolve(__dirname, './src/stores'),
+      '@/hooks': require('path').resolve(__dirname, './src/lib/hooks'),
+    }
+    
     config.resolve.alias.canvas = false
     return config
   },
