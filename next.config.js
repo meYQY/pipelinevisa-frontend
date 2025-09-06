@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const path = require('path')
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -43,19 +45,25 @@ const nextConfig = {
     typedRoutes: true,
   },
   
-  // Webpack配置
+  // Webpack配置 - 强制路径解析
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    // 配置路径别名
+    // 绝对路径别名配置
     config.resolve.alias = {
       ...config.resolve.alias,
-      '@': require('path').resolve(__dirname, './src'),
-      '@/lib': require('path').resolve(__dirname, './src/lib'),
-      '@/services': require('path').resolve(__dirname, './src/services'),
-      '@/components': require('path').resolve(__dirname, './src/components'),
-      '@/types': require('path').resolve(__dirname, './src/types'),
-      '@/stores': require('path').resolve(__dirname, './src/stores'),
-      '@/hooks': require('path').resolve(__dirname, './src/lib/hooks'),
+      '@': path.resolve(__dirname, 'src'),
+      '@/lib': path.resolve(__dirname, 'src/lib'),
+      '@/services': path.resolve(__dirname, 'src/services'),
+      '@/components': path.resolve(__dirname, 'src/components'),
+      '@/types': path.resolve(__dirname, 'src/types'),
+      '@/stores': path.resolve(__dirname, 'src/stores'),
+      '@/hooks': path.resolve(__dirname, 'src/lib/hooks'),
     }
+    
+    // 强制模块解析策略
+    config.resolve.modules = [
+      path.resolve(__dirname, 'src'),
+      'node_modules'
+    ]
     
     config.resolve.alias.canvas = false
     return config
