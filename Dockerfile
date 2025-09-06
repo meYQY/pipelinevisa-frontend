@@ -16,6 +16,9 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
+# 确保public目录存在
+RUN mkdir -p ./public
+
 # 设置构建时环境变量
 ARG NEXT_PUBLIC_API_URL
 ARG NEXT_PUBLIC_APP_NAME
@@ -38,8 +41,7 @@ ENV NEXT_TELEMETRY_DISABLED 1
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-# 创建并复制public目录
-RUN mkdir -p /app/public
+# 复制public目录
 COPY --from=builder /app/public ./public
 
 # 复制构建产物
