@@ -413,7 +413,6 @@ export default function DashboardPage() {
           </div>
         </div>
       </div>
-      </div>
 
       {/* 创建案例模态框 */}
       <CreateCaseModal 

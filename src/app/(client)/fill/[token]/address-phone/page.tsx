@@ -105,12 +105,12 @@ export default function AddressPhonePage() {
     try {
       const formData = await ds160Service.getFormData(token)
       if (formData?.form_data?.address_phone) {
-        const savedData = formData.form_data.address_phone
+        const savedData = (formData.form_data as any).address_phone
         reset({
-          home_address_street: savedData.home_address_street || '',
-          home_address_city: savedData.home_address_city || '',
-          home_address_state: savedData.home_address_state || '北京市',
-          home_address_postal_code: savedData.home_address_postal_code || '',
+          home_address_street: savedData?.home_address_street || '',
+          home_address_city: savedData?.home_address_city || '',
+          home_address_state: savedData?.home_address_state || '北京市',
+          home_address_postal_code: savedData?.home_address_postal_code || '',
           home_address_country: savedData.home_address_country || '中国',
           is_mailing_address_same_as_home: savedData.is_mailing_address_same_as_home ?? true,
           mailing_address_street: savedData.mailing_address_street || '',
