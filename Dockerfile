@@ -38,6 +38,8 @@ ENV NEXT_TELEMETRY_DISABLED 1
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
+# 创建并复制public目录
+RUN mkdir -p /app/public
 COPY --from=builder /app/public ./public
 
 # 复制构建产物
