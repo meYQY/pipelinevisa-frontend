@@ -95,8 +95,8 @@ class DS160Service {
       current_step: 1,
       completed_steps: [],
       total_steps: 10,
-      percentage: formData.completion_percentage,
-      last_saved_at: formData.last_saved_at
+      percentage: (formData as any).completion_percentage || 0,
+      last_saved_at: (formData as any).last_saved_at || new Date().toISOString()
     }
   }
 
@@ -122,20 +122,21 @@ class DS160Service {
     const errors: Array<{ field: string; message: string }> = []
     const missing_fields: string[] = []
 
-    if (!formData?.original_data) {
+    const originalData = (formData as any)?.original_data || formData?.form_data;
+    if (!originalData) {
       missing_fields.push('form_data')
       errors.push({ field: 'form_data', message: 'No form data found' })
     } else {
       // 基本验证
-      if (!formData.original_data.surname) {
+      if (!originalData.surname) {
         missing_fields.push('surname')
         errors.push({ field: 'surname', message: 'Surname is required' })
       }
-      if (!formData.original_data.given_names) {
+      if (!originalData.given_names) {
         missing_fields.push('given_names')
         errors.push({ field: 'given_names', message: 'Given names are required' })
       }
-      if (!formData.original_data.passport_number) {
+      if (!originalData.passport_number) {
         missing_fields.push('passport_number')
         errors.push({ field: 'passport_number', message: 'Passport number is required' })
       }

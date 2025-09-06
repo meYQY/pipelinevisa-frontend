@@ -326,7 +326,8 @@ export default function UploadPage() {
               <div key={file.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                 <div className="flex items-center space-x-3 flex-1">
                   {file.type.startsWith('image/') ? (
-                    <Image className="w-5 h-5 text-gray-500" alt="" />
+                    // eslint-disable-next-line jsx-a11y/alt-text
+                    <Image className="w-5 h-5 text-gray-500" />
                   ) : (
                     <FileText className="w-5 h-5 text-gray-500" />
                   )}

@@ -114,9 +114,10 @@ export default function PersonalInfo2Page() {
   const loadSavedData = async () => {
     try {
       const formData = await ds160Service.getFormData(token)
-      if (formData?.original_data) {
+      const originalData = (formData as any)?.original_data || formData?.form_data?.personal_info_2;
+      if (originalData) {
         // 从后端JSONB字段读取personal_info_2数据
-        const savedData = formData.original_data
+        const savedData = originalData
         reset({
           nationality: savedData.nationality || 'China',
           other_nationalities: savedData.has_other_nationality || false,

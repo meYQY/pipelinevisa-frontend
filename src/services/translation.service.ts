@@ -74,9 +74,7 @@ class TranslationService {
   }
 
   async generateComparisonPDF(caseId: string): Promise<string> {
-    const response = await api.post(`/cases/${caseId}/translation/pdf`, {}, {
-      responseType: 'blob'
-    })
+    const response = await api.post(`/cases/${caseId}/translation/pdf`, {})
     
     const blob = new Blob([response as any], { type: 'application/pdf' })
     return URL.createObjectURL(blob)

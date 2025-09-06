@@ -68,9 +68,7 @@ class DiagnosisService {
   }
 
   async generateReport(reportId: string, options: ReportGenerationOptions): Promise<string> {
-    const response = await api.post(`/diagnosis/reports/${reportId}/generate`, options, {
-      responseType: 'blob'
-    })
+    const response = await api.post(`/diagnosis/reports/${reportId}/generate`, options)
     
     // 创建blob URL用于预览
     const blob = new Blob([response as any], { type: 'application/pdf' })

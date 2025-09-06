@@ -107,9 +107,10 @@ export default function BasicInfoPage() {
   const loadSavedData = async () => {
     try {
       const formData = await ds160Service.getFormData(token)
-      if (formData?.original_data) {
+      const originalData = (formData as any)?.original_data || formData?.form_data?.personal_info_1;
+      if (originalData) {
         // 从后端JSONB字段读取数据
-        const savedData = formData.original_data
+        const savedData = originalData
         reset({
           surname: savedData.surname || '',
           given_names: savedData.given_names || '',
